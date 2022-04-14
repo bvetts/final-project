@@ -11,6 +11,8 @@ import Home from "./components/home-screen";
 import Login from "./components/users/login-screen";
 import Signup from "./components/users/signup-screen";
 import Profile from "./components/users/profile-screen";
+import OtherProfile from "./components/users/other-profiles";
+
 
 import Privacy from "./components/privacy-screen";
 import Screen from "./components";
@@ -38,6 +40,7 @@ function App() {
                  <Route path="home" element={<Home/>}/>
 
                  <Route path="profile" element={<Profile/>}/>
+                 <Route path="profile/:id" element={<OtherProfile/>}/>
 
                  <Route path="privacy" element={<Privacy/>}/>
                  <Route path="register" element={<Signup/>}/>

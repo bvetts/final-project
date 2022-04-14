@@ -5,56 +5,57 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 
 import * as service from "../services/user-service"
 
-const OmdbSearch = () => {
+const ProfileSearch = () => {
 
-  const titleSearchRef = useRef()
-  const {movieSearch} = useParams()
+  const titleSearchRef = useRef('user')
+  const {userSearch} = useParams()
   const navigate = useNavigate()
-  const [movies, setMovies] = useState([])
+  const [users, setUsers] = useState([])
+
+
 
 
   //var searchString = 'apple'
-  const searchByTitle = async () => {
-    const searchString = titleSearchRef.current.value || movieSearch || 'apple'
-    const response = await service.profile()
-    setMovies(response.data.data)
+  const searchByUsername = async () => {
+    const searchString = titleSearchRef.current.value || userSearch || 'val';
+    const res = await service.findUserByUsername(searchString);
+//    setUsers(response)
+    //console.log(res)
+    setUsers(res);
     titleSearchRef.current.value = searchString
-    navigate(`/search/${searchString}`)
-    //console.log(`${searchUrl}?q=${searchString}`)
+    //navigate(`/profile/${searchString}`)//there may be an issue with this. not set up correctly for it??
+    //console.log(users);
 
   }
   useEffect(() => {
-    searchByTitle()
+    searchByUsername()
   }, [])
 
   return (
     <div>
-      <h1>News Search</h1>
+      <h1>Find Friends</h1>
       <ul className="list-group">
         <li className="list-group-item">
           <button
-            onClick={searchByTitle}
+            onClick={searchByUsername}
             className="btn btn-primary float-end">Search</button>
           <input
             ref={titleSearchRef}
             className="form-control w-75"/>
         </li>
-        {
-          movies.map(movie =>
+
+
             <li className="list-group-item">
 
-              <Link to={`/details/${movie.uuid}`}>
-              <div className = "wd-search-image d-inline-block">
-                <img src={movie.image_url} className="d-inline-block me-2 " height={50} />
-              </div>
+              <Link to={`/profile/${users._id}`}>
 
-              <div className = "wd-titles d-inline-block">{movie.title}</div>
+
+              <div className = "wd-titles d-inline-block">{users.username}</div>
 
               </Link>
 
             </li>
-          )
-        }
+
 
       </ul>
 
@@ -62,7 +63,7 @@ const OmdbSearch = () => {
   );
 };
 
-export default OmdbSearch;
+export default ProfileSearch;
 
 
 //<Preformatted obj={movies}/>

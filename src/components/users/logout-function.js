@@ -5,10 +5,12 @@ import {useState, useEffect} from "react";
 export const Logout = () => {
   const [loginUser, setLoginUser] = useState({});
   const navigate = useNavigate()
-  const logout = () =>
+  const logout = () =>{
     security.logout(loginUser)
       .then((user) => navigate('/home'))
       .catch(e => alert(e));
+      window.location.reload();
+      }
   return (
   <div>
 

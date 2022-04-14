@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
-
+import LoginStatus from "../login-status";
 //links may change yet
 const NavigationSidebar = () => {
 

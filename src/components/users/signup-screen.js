@@ -6,10 +6,14 @@ import * as service from "../services/auth-service"
 const Signup = () => {
   const [newUser, setNewUser] = useState({});
   const navigate = useNavigate();
-  const signup= () =>
+  const signup= () =>{
     service.signup(newUser)
       .then(() => navigate('/profile'))
       .catch(e => alert(e));
+
+}
+
+
   return (
   <>
 <h1>Signup</h1>

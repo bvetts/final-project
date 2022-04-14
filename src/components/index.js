@@ -15,13 +15,15 @@ const Screen = () => {
       <div className="col-2 col-lg-2 col-xl-2">
         <NavigationSidebar/>
 
+
       </div>
       <div className="row col-8 ">
         <Outlet/>
+
       </div>
 
       <div className="row col-2 ">
-          <LoginStatus/>
+            <LoginStatus/>
       </div>
 
     </div>

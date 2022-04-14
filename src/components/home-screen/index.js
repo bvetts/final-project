@@ -6,7 +6,7 @@ import * as service from "../services/auth-service"
 import Logout from "../users/logout-function.js";
 
 import Headlines from "./headlines-info.js";
-
+import LoginStatus from "../login-status";
 
 
 const Home = () => {
@@ -19,6 +19,7 @@ const Home = () => {
             <div >
                 <HomeComponent />
             </div>
+
 
 
 
