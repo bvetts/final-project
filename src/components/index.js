@@ -17,14 +17,14 @@ const Screen = () => {
 
 
       </div>
-      <div className="row col-8 ">
+      <div className="row col-10 ">
         <Outlet/>
 
       </div>
+        <div className="row col-2 ">
+                    <LoginStatus/>
+              </div>
 
-      <div className="row col-2 ">
-            <LoginStatus/>
-      </div>
 
     </div>
 
@@ -33,3 +33,9 @@ const Screen = () => {
 
 
 export default Screen;
+
+/*
+<div className="row col-2 ">
+            <LoginStatus/>
+      </div>
+*/

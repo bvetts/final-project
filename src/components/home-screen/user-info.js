@@ -1,15 +1,46 @@
+import * as service from "../services/auth-service"
+import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom";
 
-//make this teh place that displays info fo the logged in user. not sure how to do that yet
+import {Link, useNavigate} from "react-router-dom";
+
+
 const HomeComponent = () => {
+
+const [profile, setProfile] = useState({});
+  useEffect(async () => {
+    const user = await service.profile();
+    setProfile(user);
+
+  }, []);
+
+if (profile){
     return(
 
         <div>
 
 
-            display some user specific information
+            <h4>Username: {profile.username}</h4>
 
         </div>
   );
+}
+else{
+
+return(
+
+        <div>
+
+
+            <Link className="btn btn-primary btn-block rounded-pill" to="/login">Login </Link>
+
+        </div>
+  );
+
+
+}
+
+
 }
 
 export default HomeComponent;

@@ -1,23 +1,62 @@
 import {useState, useEffect} from "react";
-import {useNavigate} from "react-router-dom";
 
+import {Link, useNavigate} from "react-router-dom";
 import * as service from "../services/auth-service"
+
+import {useProfile} from "../contexts/profile-context";
+
+
 
 const Signup = () => {
   const [newUser, setNewUser] = useState({});
   const navigate = useNavigate();
+
+
+const logout = async () => {
+    await service.logout()
+    navigate('/register')
+  }
+
+
   const signup= () =>{
+  try{
     service.signup(newUser)
       .then(() => navigate('/profile'))
-      .catch(e => alert(e));
+      .catch(e => alert(e));}
+      catch(e){
+      alert('user already exists')
+
+      }
+
+}
+
+//my way of checking if already logged in.
+//built most of assignment before professor's example, not redoing it all.
+  const [profile, setProfile] = useState({});
+  useEffect(async () => {
+    const user = await service.profile();
+    setProfile(user);
+
+  }, []);
+
+
+if (profile){
+return (
+<>
+<button className="btn btn-danger"
+            onClick={logout}>Logout</button>
+</>
+);
+
 
 }
 
 
+else{
   return (
   <>
 <h1>Signup</h1>
-
+<Link className="btn btn-primary btn-block rounded-pill" to="/login">Login Instead</Link>
   <div className = 'pb-2'>
   Username:
   <input type="username" onChange={(e) =>
@@ -54,10 +93,25 @@ const Signup = () => {
           setNewUser({...newUser,
             phone: e.target.value})}/>
   </div>
+  <div className = 'pb-2'>
+        Role:
+        <select  onChange={(e) => setNewUser({...newUser, role: e.target.value})}>
+            <option selected value="general">General User</option>
+            <option value="journalist">Journalist</option>
+
+
+
+        </select>
+    </div>
 
   <button className="btn btn-primary btn-block rounded-pill " onClick={signup}>Signup</button>
 
 </>
-  );}
+  );
+
+  }
+
+
+  }
 
 export default Signup;

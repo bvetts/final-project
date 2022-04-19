@@ -1,9 +1,21 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-
-import LoginStatus from "../login-status";
+import * as service from "../services/auth-service"
+import {useState, useEffect} from "react";
+import {Link, useNavigate} from "react-router-dom";
+//import LoginStatus from "../login-status";
 //links may change yet
 const NavigationSidebar = () => {
+
+//might still use this late, but i'm not currently
+const navigate = useNavigate();
+  const [profile, setProfile] = useState({});
+  useEffect(async () => {
+    const user = await service.profile();
+    setProfile(user);
+
+  }, []);
+
 
 
 
@@ -26,8 +38,10 @@ const NavigationSidebar = () => {
                 <NavLink  to="/privacy" className="btn btn-primary btn-block rounded-pill">Privacy Policy</NavLink>
             </div>
 
+
         </>
     );
+
 
 
 

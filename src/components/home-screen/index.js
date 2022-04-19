@@ -7,7 +7,7 @@ import Logout from "../users/logout-function.js";
 
 import Headlines from "./headlines-info.js";
 import LoginStatus from "../login-status";
-
+import FavoritesList from "./favorites-info.js";
 
 const Home = () => {
     return(
@@ -18,6 +18,9 @@ const Home = () => {
             </div>
             <div >
                 <HomeComponent />
+            </div>
+            <div >
+                <FavoritesList/>
             </div>
 
 

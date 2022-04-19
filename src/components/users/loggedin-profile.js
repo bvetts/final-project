@@ -40,8 +40,17 @@ search needs to be possible when logged in too</p>
 }
 else{
 return(<>
+<br/>
+    <ul className="list-group">
+        <li className="list-group-item">
+            <Link className="btn btn-primary btn-block rounded-pill" to="/register">Register</Link>
+        </li>
+        <li className="list-group-item">
+            <Link className="btn btn-primary btn-block rounded-pill" to="/login">Login</Link>
+        </li>
 
-no one is logged in
+
+    </ul>
 
 </>);
 }
