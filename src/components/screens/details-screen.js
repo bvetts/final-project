@@ -2,11 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import Preformatted from "../../utils/pre";
+import * as service from "../services/auth-service"
+import LDetails from "./loggedin-details.js"
+import CreateFavorite from "./create-favorite.js"
+//allow a logged in user to favorite article here
+//allow a logged in journalist to post comments here
+
+const ArticleDetails = () => {
+  const [profile, setProfile] = useState({});
 
 
-//save likes/comments on articles here?
-
-const OmdbDetails = () => {
   const [movieDetails, setMovieDetails] = useState({})
   const [ourMovieDetails, setOurMovieDetails] = useState({})
   const url = 'https://api.thenewsapi.com/v1/news/uuid/'
@@ -21,20 +26,23 @@ const OmdbDetails = () => {
     const response = await axios.get(`http://localhost:4000/api/movies/${uuid}`)
     setOurMovieDetails(response.data)
   }
-  useEffect(() => {
-    searchMovieByImdbID()
-    searchOurMovieByImdbID()
-  }, [])
 
-  const handleLike = async () => {
-    const movie = {
-      title: movieDetails.title,
-      poster: movieDetails.image_url,
-      uuid: movieDetails.uuid
-    }
-    const response = await axios.post("http://localhost:4000/api/likes", movie)
-    setOurMovieDetails(response.data)
-  }
+
+
+  useEffect(() => {
+
+
+    searchMovieByImdbID();
+    searchOurMovieByImdbID();
+
+  }, [])
+  useEffect(async () => {
+      const user = await service.profile();
+      setProfile(user);
+
+    }, []);
+
+
 
   return (
     <div>
@@ -43,17 +51,17 @@ const OmdbDetails = () => {
         <p>
           {movieDetails.snippet}
         </p>
-        <p>{movieDetails.url}</p>
-        <p>{movieDetails.published_at}</p>
-        <p>{movieDetails.source}</p>
-
-        <button onClick={handleLike}>Like ({ourMovieDetails && ourMovieDetails.likes})</button>
+        <a href={movieDetails.url}>Original Article</a>
+        <p>Publish Date: {movieDetails.published_at}</p>
+        <p>Source: {movieDetails.source}</p>
 
 
+
+        <LDetails profile={profile} uuid ={uuid} title = {movieDetails.title} />
 
 
     </div>
   );
 };
 
-export default OmdbDetails;
+export default ArticleDetails;

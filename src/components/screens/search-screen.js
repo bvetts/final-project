@@ -3,12 +3,15 @@ import axios from "axios";
 import Preformatted from "../../utils/pre";
 import {Link, useNavigate, useParams} from "react-router-dom";
 
-const OmdbSearch = () => {
+const ArticleSearch = () => {
 
   const titleSearchRef = useRef()
   const {movieSearch} = useParams()
   const navigate = useNavigate()
   const [movies, setMovies] = useState([])
+  //"https://newsdata.io/api/1/news?apikey=pub_64555eb9bec5b8597d64a10c0d74910cac23&language=en"
+  //do not change api if possible because the other one doesnt let you look at the
+  //historical data at all, which is problem for favs and comments
   const searchUrl = 'https://api.thenewsapi.com/v1/news/top?api_token=PaM8GSjtcuE6O04dIGdsNlZk611wwRYi5BNmwxtV&locale=us&limit=10&language=en&search='
   const key = 'PaM8GSjtcuE6O04dIGdsNlZk611wwRYi5BNmwxtV'
 
@@ -61,7 +64,7 @@ const OmdbSearch = () => {
   );
 };
 
-export default OmdbSearch;
+export default ArticleSearch;
 
 
 //<Preformatted obj={movies}/>

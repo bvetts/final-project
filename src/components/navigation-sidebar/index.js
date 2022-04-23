@@ -34,9 +34,7 @@ const navigate = useNavigate();
 
 
             </div>
-            <div className="d-grid mt-2">
-                <NavLink  to="/privacy" className="btn btn-primary btn-block rounded-pill">Privacy Policy</NavLink>
-            </div>
+
 
 
         </>

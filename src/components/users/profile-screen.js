@@ -15,13 +15,26 @@ const Profile = () => {
 
 
 
-
+//change some of teh views for size bootstrap
 return(
 
 <div>
 
-<ProfileSearch />
-<LoggedProfile />
+<div className="row mt-2">
+
+      <div className="col-10 col-lg-7 ">
+        <LoggedProfile />
+
+      </div>
+      <div className="d-none d-lg-block col-lg-4 ">
+        <ProfileSearch />
+
+      </div>
+
+
+
+    </div>
+
 
 
 </div>

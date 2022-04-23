@@ -17,13 +17,11 @@ const Screen = () => {
 
 
       </div>
-      <div className="row col-10 ">
+      <div className="row col-10 col-xl-13">
         <Outlet/>
 
       </div>
-        <div className="row col-2 ">
-                    <LoginStatus/>
-              </div>
+
 
 
     </div>

@@ -15,8 +15,17 @@ width:28%;
     display: inline;
 }
 
+.wd-profileInfo{
+width:75%;
 
+}
+.wd-profileButtons{
+width:25%;
 
+}
+.wd-profileContainer{
+width:100%
+}
 
 
 

@@ -12,21 +12,22 @@ const Signup = () => {
   const navigate = useNavigate();
 
 
+
 const logout = async () => {
     await service.logout()
     navigate('/register')
   }
 
-
+//navigate on signup isnt woking right, but user is being made?
+//it creates user, but then always displays cath error code and doesn't navigate to profile????
   const signup= () =>{
   try{
     service.signup(newUser)
-      .then(() => navigate('/profile'))
-      .catch(e => alert(e));}
-      catch(e){
-      alert('user already exists')
-
+    navigate('/profile')
       }
+  catch(e){
+      alert('user already exists')
+  }
 
 }
 

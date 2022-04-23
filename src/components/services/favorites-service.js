@@ -12,16 +12,16 @@ export const favoritesByUUID = async (uuid) => {
   console.log(response)
   return response.data
 }
-export const favoritesByUser = async (username) => {
- console.log(`${USERS_API}/username/${username}`)
-  const response = await axios.get(`${USERS_API}/username/${username}`)
+export const favoritesByUser = async (userID) => {
+ console.log(`${USERS_API}/userID/${userID}`)
+  const response = await axios.get(`${USERS_API}/userID/${userID}`)
   console.log(response)
   return response.data
 }
 
 
-export const createFavorite = async (info) => {
-  const response = await axios.post(USERS_API, info)
+export const createFavorite = async (fav) => {
+  const response = await axios.post(USERS_API, fav)
   return response.data
 }
 

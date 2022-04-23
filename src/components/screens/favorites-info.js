@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-
+import {Link, useNavigate, useParams} from "react-router-dom";
 
 
 import * as service from "../services/auth-service"
@@ -8,16 +8,22 @@ import * as serviceF from "../services/favorites-service"//might need diff name?
 
 //enter one from postman for testing??
 
-const FavoritesList = () => {
-  const [profile, setProfile] = useState({});
+const FavoritesList = ({profile}) => {
+  //const [profile, setProfile] = useState({});
 
 
   const [fav, setFav] = useState([])
 
-  const findFavorites = async (username) => {
-    const f = await serviceF.favoritesByUser(username);
+console.log(profile._id)
+  const findFavorites = async () => {
+    const f = await serviceF.favoritesByUser(profile._id);
     setFav(f)
   }
+  const deleteF = async (id) =>  {
+    await serviceF.deleteFavorite(id);
+  }
+
+
   //following function not woking yet
   /*
   const deleteFavorite = async (userId) => {
@@ -43,39 +49,58 @@ const FavoritesList = () => {
   }
 
 */
-const showFavorites = async () =>{
-findFavorites(profile.username)
-}
+//const showFavorites = async () =>{
+//findFavorites(profile.username)
+//}//
+ useEffect(async () => {
 
-  useEffect(async () => {
-        const user = await service.profile();
-        setProfile(user);
+   findFavorites();
+
+  }, [])
+
+  //useEffect({
+        //const user = await service.profile();
+        //setProfile(user);
+     //   findFavorites()
 
 
-      }, []);
+   //   }, []);
 
 //need to lookup and display title and image isntead of id??
 //this might be why we need article in our database
+//need the button, aldo have it display hide the button itself??
   return (
     <div>
-      <h1>Favorites</h1>
+    <div>
+      <button onClick={findFavorites} className="btn btn-primary float">Refresh Favorite Articles</button>
+    </div>
       <ul className="list-group">
-      {profile.username}
-        <button
-            onClick={() => showFavorites()}
-            className="float-end btn btn-primary">Show Favorites</button>
+
         {
           fav.map(fav =>
           <li key={fav._id} className="list-group-item">
+          <i onClick={() => deleteF(fav._id)} className="fa-solid fa-remove fa-2x fa-pull-left"></i>
 
-            {fav.username} {fav.uuid}
+                <Link to={`/details/${fav.uuid}`}>
+
+
+
+
+
+              <div className = " wd-titles d-inline-block">{fav.title}</div>
+
+              </Link>
+
+
+
           </li>
           )
         }
       </ul>
-      <pre>{JSON.stringify(fav, null, 2)}</pre>
+
     </div>
   );
 };
 
 export default FavoritesList;
+//<i onClick={() => deleteF(fav._id)} className="fa-solid fa-remove fa-2x fa-pull-left"></i>

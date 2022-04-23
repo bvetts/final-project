@@ -13,13 +13,17 @@ import {Link, useNavigate} from "react-router-dom";
 
 const Headlines = () => {
   const [articles, setArticles]  = useState([])
+//this is using backup api, change to the other one for looking at and storing favs/comments
+  //const url = "https://newsdata.io/api/1/news?apikey=pub_64555eb9bec5b8597d64a10c0d74910cac23&language=en"
 
+  //actual api:
   const url = 'https://api.thenewsapi.com/v1/news/top?locale=us&language=en&api_token=PaM8GSjtcuE6O04dIGdsNlZk611wwRYi5BNmwxtV'
   //const token = '?api_token=PaM8GSjtcuE6O04dIGdsNlZk611wwRYi5BNmwxtV'
   //const {uuid} = useParams()
   const collectArticles = async () => {
     const response = await axios.get(`${url}`)
-    setArticles(response.data.data)
+    //setArticles(response.data.data)
+    setArticles(response.data.results)
 
   }
 

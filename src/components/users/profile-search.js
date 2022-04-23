@@ -33,7 +33,7 @@ const ProfileSearch = () => {
 
   return (
     <div>
-      <h1>Find Friends</h1>
+      <h5>Find Friends By Username</h5>
       <ul className="list-group">
         <li className="list-group-item">
           <button
@@ -41,7 +41,7 @@ const ProfileSearch = () => {
             className="btn btn-primary float-end">Search</button>
           <input
             ref={titleSearchRef}
-            className="form-control w-75"/>
+            className="form-control w-50"/>
         </li>
 
 

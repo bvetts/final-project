@@ -7,26 +7,27 @@ import Logout from "../users/logout-function.js";
 
 import Headlines from "./headlines-info.js";
 import LoginStatus from "../login-status";
-import FavoritesList from "./favorites-info.js";
+
 
 const Home = () => {
     return(
-        <div >
+    <div className="row mt-2">
 
-            <div >
-                <Headlines />
-            </div>
-            <div >
-                <HomeComponent />
-            </div>
-            <div >
-                <FavoritesList/>
-            </div>
+          <div className="col-10 col-lg-7 ">
+            <Headlines />
 
+          </div>
+          <div className="d-none d-lg-block col-lg-4 ">
+             <HomeComponent />
+
+          </div>
 
 
 
-        </div>
+    </div>
+
+
+
     );
 };
 export default Home;

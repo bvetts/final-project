@@ -12,15 +12,15 @@ import Login from "./components/users/login-screen";
 import Signup from "./components/users/signup-screen";
 import Profile from "./components/users/profile-screen";
 import OtherProfile from "./components/users/other-profiles";
-
+import EditProfile from "./components/users/edit-profile";
 
 import Privacy from "./components/privacy-screen";
 import Screen from "./components";
 
 //import UserList from "./components/users/user-list";
 
-import OmdbSearch from "./components/screens/search-screen";
-import OmdbDetails from "./components/screens/details-screen";
+import ArticleSearch from "./components/screens/search-screen";
+import ArticleDetails from "./components/screens/details-screen";
 
 
 
@@ -31,9 +31,9 @@ function App() {
     <div className="container">
       <Routes>
                <Route path="/" element={<Screen/>}>
-                  <Route path="search" element={<OmdbSearch/>}/>
-                  <Route path="search/:movieSearch" element={<OmdbSearch/>}/>
-                  <Route path="details/:uuid" element={<OmdbDetails/>}/>
+                  <Route path="search" element={<ArticleSearch/>}/>
+                  <Route path="search/:movieSearch" element={<ArticleSearch/>}/>
+                  <Route path="details/:uuid" element={<ArticleDetails/>}/>
 
                  <Route index element={<Home/>} />
 
@@ -41,6 +41,7 @@ function App() {
 
                  <Route path="profile" element={<Profile/>}/>
                  <Route path="profile/:id" element={<OtherProfile/>}/>
+                 <Route path="edit/:id" element={<EditProfile/>}/>
 
                  <Route path="privacy" element={<Privacy/>}/>
                  <Route path="register" element={<Signup/>}/>

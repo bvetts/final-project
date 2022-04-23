@@ -7,9 +7,9 @@ export const Logout = () => {
   const navigate = useNavigate()
   const logout = () =>{
     security.logout(loginUser)
-      .then((user) => navigate('/home'))
+      .then((user) => navigate('/login'))
       .catch(e => alert(e));
-      window.location.reload();
+
       }
   return (
   <div>
