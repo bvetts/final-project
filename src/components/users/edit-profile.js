@@ -8,7 +8,8 @@ import {Link, useNavigate} from "react-router-dom";
 import * as security from "../services/auth-service"
 
 
-
+//might need to be different based on the user role? not changeable on edit screen?
+//do a if else based on role I think. Might need completly different input things, so maybe a completly different screen.
 const EditProfile = () => {
 const {id} = useParams()
 const [newUser, setNewUser] = useState({});
@@ -16,8 +17,7 @@ const navigate = useNavigate();
 
 console.log(id)
 console.log(newUser)
-//findUserById
-//updateUser
+
 
 const confirmEdit = () =>{
     try{
@@ -81,16 +81,7 @@ return(
           setNewUser({...newUser,
             phone: e.target.value})}/>
   </div>
-  <div className = 'pb-2'>
-        Role:
-        <select  value={newUser.role} onChange={(e) => setNewUser({...newUser, role: e.target.value})}>
-            <option value="general">General User</option>
-            <option value="journalist">Journalist</option>
 
-
-
-        </select>
-    </div>
 
   <button className="btn btn-primary btn-block rounded-pill " onClick={confirmEdit}>Confirm Changes</button>
 
@@ -105,3 +96,15 @@ return(
 
 
 export default EditProfile;
+/*
+ <div className = 'pb-2'>
+        Role:
+        <select  value={newUser.role} onChange={(e) => setNewUser({...newUser, role: e.target.value})}>
+            <option value="general">General User</option>
+            <option value="journalist">Journalist</option>
+
+
+
+        </select>
+    </div>
+*/

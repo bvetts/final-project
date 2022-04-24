@@ -21,58 +21,25 @@ console.log(profile._id)
   }
   const deleteF = async (id) =>  {
     await serviceF.deleteFavorite(id);
+    findFavorites();
   }
-
-
-  //following function not woking yet
-  /*
-  const deleteFavorite = async (userId) => {
-    const status = await service.deleteUser(userId)
-    const newUsers = users.filter(user => user._id !== userId)
-    setUsers(newUsers)
-  }
-*/
-/*
-//use somewhere else later,  modify
- const createFavorite = async () => {
-    const newFavorite = {
-      username: {profile.username},
-      uuid: '1234567',//this is the part that needs to be selected somehow
+  const favButton = async () => {
+      findFavorites();
+      var element = document.getElementById("myDiv");
+      element.style.display = "none";
 
     }
-    const insertedFav = await service.createFavorite(newFavorite)
-    const newFavorites = [
-      ...fav,
-      insertedFav
-    ]
-    setFavorites(newFavorites)
-  }
 
-*/
-//const showFavorites = async () =>{
-//findFavorites(profile.username)
-//}//
  useEffect(async () => {
 
    findFavorites();
 
   }, [])
 
-  //useEffect({
-        //const user = await service.profile();
-        //setProfile(user);
-     //   findFavorites()
-
-
-   //   }, []);
-
-//need to lookup and display title and image isntead of id??
-//this might be why we need article in our database
-//need the button, aldo have it display hide the button itself??
   return (
     <div>
     <div>
-      <button onClick={findFavorites} className="btn btn-primary float">Refresh Favorite Articles</button>
+      <button id="myDiv" onClick={favButton} className="btn btn-primary float">Show Favorite Articles</button>
     </div>
       <ul className="list-group">
 

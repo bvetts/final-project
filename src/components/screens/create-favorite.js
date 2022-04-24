@@ -20,6 +20,7 @@ const CreateFavorite = ({profile, uuid, title}) => {
     console.log(uuid)
     console.log(title)
 
+
      fav.userID = profile._id
      fav.uuid = uuid
      fav.title = title

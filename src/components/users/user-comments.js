@@ -20,9 +20,20 @@ console.log(profile._id)
     setCommlist(c)
   }
   const deleteC = async (_id) =>  {
-    console.log(_id)
+    //console.log(_id)
     await serviceC.deleteTuit(_id);
+    findComments();
   }
+
+
+  const commButton = async () => {
+        findComments();
+        var element = document.getElementById("myDivC");
+        element.style.display = "none";
+        var element2 = document.getElementById("showComments");
+        element2.style.display = "show";
+
+      }
 
 
 
@@ -35,9 +46,13 @@ console.log(profile._id)
 //add  username somehow?? add it into the database originally?
   return (
     <div>
-    <div>
-      <button onClick={findComments} className="btn btn-primary float">Refresh Comments</button>
-    </div>
+    <br/>
+    <br/>
+        <div id="myDivC">
+          <button onClick={commButton} className="btn btn-primary float">Show My Comments</button>
+        </div>
+    <div id="showComments" >
+
       <ul className="list-group">
 
         {
@@ -55,6 +70,7 @@ console.log(profile._id)
           )
         }
       </ul>
+    </div>
 
     </div>
   );

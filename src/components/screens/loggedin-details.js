@@ -22,7 +22,7 @@ if (profile.username){
     <div>
       <h3>{profile.username}</h3>
       <CreateFavorite profile={profile} uuid = {uuid} title = {title}/>
-      <CommentList uuid ={uuid} />
+      <CommentList profile={profile} uuid = {uuid} title = {title} />
 
 
      have a favorite button here?? maybe need to also send article id from previous screen

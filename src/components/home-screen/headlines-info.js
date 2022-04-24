@@ -22,8 +22,8 @@ const Headlines = () => {
   //const {uuid} = useParams()
   const collectArticles = async () => {
     const response = await axios.get(`${url}`)
-    //setArticles(response.data.data)
-    setArticles(response.data.results)
+    setArticles(response.data.data)
+    //setArticles(response.data.results)
 
   }
 
