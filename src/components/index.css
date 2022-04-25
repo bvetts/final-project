@@ -26,9 +26,29 @@ width:25%;
 .wd-profileContainer{
 width:100%
 }
+.wd-boxOutline{
+padding:2px;
+ border-color: white;
+ border-width: 1px;
+ border-style: solid;
+}
+.wd-inputColor{
+background-color:rgb(47, 51, 54);
+}
+.wd-commentBox{
 
+    padding-left:2%;
+    width:100%;
+    color:white;
+    background-color:black;
+    border-color: rgb(47, 51, 54);
+    border-width: 1px;
+    border-style: solid;
 
-
+}
+.wd-articleImageBox{
+width:100%;
+}
 
 
 

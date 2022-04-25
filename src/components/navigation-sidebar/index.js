@@ -23,7 +23,7 @@ const navigate = useNavigate();
         <>
             <div className="list-group">
 
-                <NavLink  to="/home" className="list-group-item" >
+                <NavLink  to="/home" className="list-group-item " >
                         <i className="fa fa-home"> <span className="wd-navLabels" > Home</span> </i> </NavLink>
                 <NavLink to="/search" className="list-group-item" >
                         <i className="fa fa-hashtag"> <span className="wd-navLabels" > Search</span> </i> </NavLink>

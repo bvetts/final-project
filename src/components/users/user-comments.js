@@ -44,12 +44,13 @@ console.log(profile._id)
   }, [])
 
 //add  username somehow?? add it into the database originally?
+if (profile.role ==="journalist"){
   return (
     <div>
-    <br/>
-    <br/>
+    <h5 className="text-success">Comments:</h5>
+
         <div id="myDivC">
-          <button onClick={commButton} className="btn btn-primary float">Show My Comments</button>
+          <button onClick={commButton} className="btn btn-info float">Show Comments</button>
         </div>
     <div id="showComments" >
 
@@ -74,6 +75,21 @@ console.log(profile._id)
 
     </div>
   );
+  }
+
+else{
+  return (
+    <div>
+    <br/>
+    <br/>
+
+
+
+    </div>
+  );
+  }
+
+
 };
 
 export default MyCommentList;

@@ -26,7 +26,7 @@ const logout = async () => {
     navigate('/profile')
       }
   catch(e){
-      alert('user already exists')
+      alert('Existing User')
   }
 
 }
@@ -56,57 +56,62 @@ return (
 else{
   return (
   <>
-<h1>Signup</h1>
-<Link className="btn btn-primary btn-block rounded-pill" to="/login">Login Instead</Link>
+<h1 className="text-success">New User</h1>
+
   <div className = 'pb-2'>
-  Username:
-  <input type="username" onChange={(e) =>
+  <div className="text-white">Username:</div>
+  <input className = "wd-commentBox" type="username" onChange={(e) =>
     setNewUser({...newUser,
       username: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  Password:
-  <input  type="password" onChange={(e) =>
+
+  <div className="text-white">Password:</div>
+  <input className = "wd-commentBox" type="password" onChange={(e) =>
     setNewUser({...newUser,
       password: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  Email:
-  <input type="email" onChange={(e) =>
+
+  <div className="text-white">Email:</div>
+  <input className = "wd-commentBox"  type="email" onChange={(e) =>
     setNewUser({...newUser,
       email: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  First Name:
-  <input type="firstName" onChange={(e) =>
+
+  <div className="text-white">First Name:</div>
+  <input className = "wd-commentBox" type="firstName" onChange={(e) =>
       setNewUser({...newUser,
         firstName: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  Last Name:
-  <input type="lastName" onChange={(e) =>
+
+  <div className="text-white">Last Name:</div>
+  <input className = "wd-commentBox" type="lastName" onChange={(e) =>
       setNewUser({...newUser,
         lastName: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-      Phone:
-      <input  type="phone" onChange={(e) =>
+
+      <div className="text-white">Phone:</div>
+      <input className = "wd-commentBox" type="phone" onChange={(e) =>
           setNewUser({...newUser,
             phone: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-        Role:
-        <select  onChange={(e) => setNewUser({...newUser, role: e.target.value})}>
+
+        <div className="text-white ">Role:</div>
+        <select  className = "wd-commentBox" onChange={(e) => setNewUser({...newUser, role: e.target.value})}>
             <option selected value="general">General User</option>
             <option value="journalist">Journalist</option>
 
-
-
         </select>
     </div>
-
-  <button className="btn btn-primary btn-block rounded-pill " onClick={signup}>Signup</button>
-
+    <div className = "pt-2">
+      <button className="btn btn-info " onClick={signup}>Register</button>
+      <Link className="btn btn-info float-end" to="/login">Login Instead</Link>
+    </div>
 </>
   );
 
@@ -116,3 +121,4 @@ else{
   }
 
 export default Signup;
+

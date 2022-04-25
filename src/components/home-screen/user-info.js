@@ -18,11 +18,13 @@ const [profile, setProfile] = useState({});
 if (profile){
     return(
 
-        <div>
+        <div >
 
 
-            <h4> Hello {profile.firstName} {profile.lastName}</h4>
-            <p>{profile.username}</p>
+            <h4 className="text-success"> Hello {profile.firstName} {profile.lastName}</h4>
+            <p className="text-white">Username: {profile.username}</p>
+
+            <h5 className="text-success">My Favorite Articles:</h5>
             <FavoritesList profile={profile}/>
 
         </div>

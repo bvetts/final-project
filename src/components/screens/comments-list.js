@@ -29,10 +29,9 @@ console.log(title)
 
   const commButton = async () => {
           findComments();
-          var element = document.getElementById("myDivC");
+          var element = document.getElementById("fc");
           element.style.display = "none";
-          var element2 = document.getElementById("showComments");
-          element2.style.display = "show";
+
 
    }
 
@@ -67,19 +66,23 @@ if (profile.role=="journalist"){
   return (
     <div>
     <div >
-      <h1>Comments</h1>
+      <h5>Comments</h5>
 
       <div className = 'pb-2'>
 
-            <textarea placeholder="Write a Comment" onChange={(e) =>
+           <textarea className="wd-commentBox" placeholder="Write a Comment" onChange={(e) =>
                 setNewComment({...newComment,
                   comment: e.target.value})}></textarea>
+          <button className="btn btn-info btn-block btn-sm float-end " onClick={writeComment}>Post Comment</button>
+
         </div>
 
-        <button className="btn btn-primary btn-block rounded-pill " onClick={writeComment}>Post Comment</button>
 
 
     </div>
+    <div className = 'pt-5'>
+    <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={commButton}>Find Comments</button>
+
 
       <ul className="list-group">
 
@@ -98,6 +101,7 @@ if (profile.role=="journalist"){
           )
         }
       </ul>
+      </div>
 
     </div>
   );
@@ -107,10 +111,11 @@ else{
 return (
     <div>
     <div >
-      <h1>Comments</h1>
-      <p>Only Journalists Can Comment </p>
+      <h5>Comments</h5>
+      <p>Comments by Journalists </p>
 
 
+ <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={commButton}>Find Comments</button>
 
     </div>
 

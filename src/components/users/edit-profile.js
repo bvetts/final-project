@@ -39,6 +39,73 @@ useEffect(async () => {
   }, []);
 
 
+if(newUser.role==="general"){
+return(
+
+<div>
+
+<h1>Edit Profile</h1>
+<Link className="btn btn-info btn-block rounded-pill" to="/profile">Back</Link>
+  <div className = 'pb-2 pt-2'>
+  <div className="text-white">Username:</div>
+  <input className = "wd-commentBox" type="username" value={newUser.username} onChange={(e) =>
+    setNewUser({...newUser,
+      username: e.target.value})}/>
+  </div>
+  <div className = 'pb-2'>
+
+  <div className="text-white">Password:</div>
+  <input className = "wd-commentBox" type="password" value={newUser.password} onChange={(e) =>
+    setNewUser({...newUser,
+      password: e.target.value})}/>
+  </div>
+  <div className = 'pb-2'>
+
+  <div className="text-white">Email:</div>
+  <input className = "wd-commentBox" type="email" value={newUser.email} onChange={(e) =>
+    setNewUser({...newUser,
+      email: e.target.value})}/>
+  </div>
+  <div className = 'pb-2'>
+
+  <div className="text-white">First Name:</div>
+  <input  className = "wd-commentBox" type="firstName" value={newUser.firstName} onChange={(e) =>
+      setNewUser({...newUser,
+        firstName: e.target.value})}/>
+  </div>
+  <div className = 'pb-2'>
+
+  <div className="text-white">Last Name:</div>
+  <input className = "wd-commentBox" type="lastName" value={newUser.lastName} onChange={(e) =>
+      setNewUser({...newUser,
+        lastName: e.target.value})}/>
+  </div>
+  <div className = 'pb-2'>
+
+      <div className="text-white">Phone:</div>
+      <input  className = "wd-commentBox" type="phone" value={newUser.phone} onChange={(e) =>
+          setNewUser({...newUser,
+            phone: e.target.value})}/>
+  </div>
+  <div className = 'pb-2'>
+
+        <div className="text-white">About Me:</div>
+        <textarea className = "wd-commentBox" type="phone" value={newUser.description} onChange={(e) =>
+            setNewUser({...newUser,
+              description: e.target.value})}/>
+    </div>
+
+
+  <button className="btn btn-success btn-block rounded-pill " onClick={confirmEdit}>Confirm Changes</button>
+
+
+
+
+
+</div>
+ );
+ }
+else{
 return(
 
 <div>
@@ -81,6 +148,12 @@ return(
           setNewUser({...newUser,
             phone: e.target.value})}/>
   </div>
+  <div className = 'pb-2'>
+        Journalist Organization:
+        <input  type="org" value={newUser.org} onChange={(e) =>
+            setNewUser({...newUser,
+              org: e.target.value})}/>
+    </div>
 
 
   <button className="btn btn-primary btn-block rounded-pill " onClick={confirmEdit}>Confirm Changes</button>
@@ -92,19 +165,13 @@ return(
 </div>
  );
 
+
+
+}
+
+
+
 }
 
 
 export default EditProfile;
-/*
- <div className = 'pb-2'>
-        Role:
-        <select  value={newUser.role} onChange={(e) => setNewUser({...newUser, role: e.target.value})}>
-            <option value="general">General User</option>
-            <option value="journalist">Journalist</option>
-
-
-
-        </select>
-    </div>
-*/

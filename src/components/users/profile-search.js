@@ -17,7 +17,7 @@ const ProfileSearch = () => {
 
   //var searchString = 'apple'
   const searchByUsername = async () => {
-    const searchString = titleSearchRef.current.value || userSearch || 'val';
+    const searchString = titleSearchRef.current.value || userSearch || 'coolHat';
     const res = await service.findUserByUsername(searchString);
 //    setUsers(response)
     //console.log(res)
@@ -33,12 +33,12 @@ const ProfileSearch = () => {
 
   return (
     <div>
-      <h5>Find Friends By Username</h5>
+      <h5 className="text-success">Find Users By Username</h5>
       <ul className="list-group">
         <li className="list-group-item">
           <button
             onClick={searchByUsername}
-            className="btn btn-primary float-end">Search</button>
+            className="btn btn-success float-end">Search</button>
           <input
             ref={titleSearchRef}
             className="form-control w-50"/>
@@ -53,6 +53,7 @@ const ProfileSearch = () => {
               <div className = "wd-titles d-inline-block">{users.username}</div>
 
               </Link>
+
 
             </li>
 

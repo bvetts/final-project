@@ -20,28 +20,15 @@ console.log(title)
 if (profile.username){
   return (
     <div>
-      <h3>{profile.username}</h3>
-      <CreateFavorite profile={profile} uuid = {uuid} title = {title}/>
-      <CommentList profile={profile} uuid = {uuid} title = {title} />
+        <div>
+          <h5>Hello {profile.username}</h5>
 
+          <CreateFavorite profile={profile} uuid = {uuid} title = {title}/>
+        </div>
 
-     have a favorite button here?? maybe need to also send article id from previous screen
-     for creating favorites
-
-      this only displays when logged in, otherwise its is undefined
-
-        nest an additional screen for making and displaying or only displaying comments
-
-    <div >
-        add a function here to create a favorite. button needs to be removed if already favorited
-    </div>
-    <div >
-        add a function to create comments. only to be seen by journalist role
-    </div>
-    <div >
-        add a function to see comments. seen by everyone if someone is logged in
-    </div>
-
+        <div className="pt-2">
+            <CommentList profile={profile} uuid = {uuid} title = {title} />
+        </div>
 
     </div>
   );

@@ -24,12 +24,22 @@ export const Login = () => {
 
   return (
   <>
-    <div><h1>Login</h1></div>
-    <input onChange={(e) =>setLoginUser({...loginUser,username: e.target.value})}/>
-    <input type="password" onChange={(e) =>setLoginUser({...loginUser,password: e.target.value})}/>
-    <button className="btn btn-primary btn-block rounded-pill" onClick={login}>Login</button>
-    <Link className="btn btn-primary btn-block rounded-pill" to="/register">New User</Link>
+    <div>
+        <h1 className="text-info">Login</h1>
+    </div>
+    <div>
+        <div className="text-white">Username:</div>
+            <input className = "wd-commentBox" onChange={(e) =>setLoginUser({...loginUser,username: e.target.value})}/>
+        <div className="text-white">Password:</div>
+            <input className = "wd-commentBox" type="password" onChange={(e) =>setLoginUser({...loginUser,password: e.target.value})}/>
+        <div className = "pt-2">
+            <Link className="btn btn-success float-end" to="/register">New User</Link>
+            <button className="btn btn-success " onClick={login}>Login</button>
+
+        </div>
+    </div>
 </>
     );};
 
 export default Login;
+

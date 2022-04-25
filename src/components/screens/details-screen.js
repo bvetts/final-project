@@ -45,19 +45,36 @@ const ArticleDetails = () => {
 
 
   return (
-    <div>
-      <h3>{movieDetails.title}</h3>
-        <img src={movieDetails.image_url} height={100}/>
-        <p>
+
+    <div className="row mt-2 ">
+
+      <div className="col-10 col-lg-8 ">
+
+
+      <h3 className="text-success">{movieDetails.title}</h3>
+      <div className="wd-articleImageBox ">
+        <img className = "" src={movieDetails.image_url} height={180} />
+      </div>
+      <h5 className="text-info pt-3">Snip</h5>
+        <div className=" text-white">
           {movieDetails.snippet}
-        </p>
+        </div>
+        <h5 className="text-info pt-3">Other information:</h5>
+        <div className="wd-boxOutline">
         <a href={movieDetails.url}>Original Article</a>
+        <div>Source: {movieDetails.source}</div>
         <p>Publish Date: {movieDetails.published_at}</p>
-        <p>Source: {movieDetails.source}</p>
+        </div>
+
+        </div>
+        <div className="col-10 col-lg-4 ">
+
+              <LDetails profile={profile} uuid ={uuid} title = {movieDetails.title} />
+        </div>
 
 
 
-        <LDetails profile={profile} uuid ={uuid} title = {movieDetails.title} />
+
 
 
     </div>

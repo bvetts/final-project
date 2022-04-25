@@ -5,7 +5,7 @@ import ProfileSearch from "./profile-search.js"
 import {Link, useNavigate} from "react-router-dom";
 import FavoritesList from "../screens/favorites-info.js"
 import MyCommentList from "./user-comments.js"
-
+import FriendsListL from "./friends-list-logged.js"
 
 const LoggedProfile = () => {
 
@@ -34,21 +34,28 @@ return(
 <div>
     <div className="d-inline-flex wd-profileContainer">
         <div className="wd-profileInfo ">
-         <h4>Welcome {profile.firstName} {profile.lastName}</h4>
-         <p>{profile.username}</p>
+         <h2 className="text-info">Welcome {profile.firstName} {profile.lastName}</h2>
 
-         <h5>Email: {profile.email}</h5>
-         <h5>Phone: {profile.phone}</h5>
-         <h5>Role: {profile.role}</h5>
+         <div className="wd-boxOutline">
+             <h5 className="text-white">Username: {profile.username}</h5>
+
+
+             <h5>Email: {profile.email}</h5>
+             <h5>Phone: {profile.phone}</h5>
+         </div>
+         <br/>
+         <p className="text-white">About: {profile.description}</p>
+
+
 
         </div>
 
 
 
         <div className=" wd-profileButtons ">
-            <Link to={`/edit/${profile._id}`} className="btn btn-primary btn-block rounded-pill" >Edit Profile</Link>
+            <Link to={`/edit/${profile._id}`} className="btn btn-info float-end " >Edit Profile</Link>
 
-            <button className="mt-2 btn btn-primary btn-block rounded-pill" onClick={logout}>Logout</button>
+            <button className="mt-2 btn btn-info float-end" onClick={logout}>Logout</button>
         </div>
     </div>
 
@@ -56,7 +63,10 @@ return(
     <div className="">
         <FavoritesList profile={profile}/>
         <MyCommentList profile = {profile} />
+        <FriendsListL profile = {profile} />
     </div>
+    <br/>
+    <br/>
 </div>
  );
 
@@ -66,8 +76,8 @@ else{
 return(
 
 <>
-
-  <Link className="btn btn-primary btn-block rounded-pill" to="/login">Login</Link>
+<h3>Login to See Your Profile</h3>
+  <Link className="btn btn-lg btn-info" to="/login">Login</Link>
 
 </>);
 }

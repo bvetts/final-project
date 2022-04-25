@@ -25,7 +25,7 @@ console.log(profile._id)
   }
   const favButton = async () => {
       findFavorites();
-      var element = document.getElementById("myDiv");
+      var element = document.getElementById("div");
       element.style.display = "none";
 
     }
@@ -35,11 +35,13 @@ console.log(profile._id)
    findFavorites();
 
   }, [])
-
+if(profile.role==="general"){
   return (
     <div>
+    <h5 className="text-success">Favorite Articles:</h5>
+
     <div>
-      <button id="myDiv" onClick={favButton} className="btn btn-primary float">Show Favorite Articles</button>
+      <button id="div" onClick={favButton} className="btn btn-info float">Show Favorite Articles</button>
     </div>
       <ul className="list-group">
 
@@ -67,6 +69,15 @@ console.log(profile._id)
 
     </div>
   );
+  }
+ else{
+ return (
+     <div>
+
+     </div>
+   );
+
+ }
 };
 
 export default FavoritesList;

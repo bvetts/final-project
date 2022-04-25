@@ -35,7 +35,11 @@ const Headlines = () => {
 
   return (
     <div>
-        <h3>Top News Today</h3>
+    <h2 className="text-info">News For All</h2>
+        <p className="text-white">Organization dedicated to delivering free news access to everyone! See comments made by
+        top journalist from around the world on articles from your favorite news sources. </p>
+
+        <h3 className="text-info">Top News Today</h3>
       <ul className="list-group">
 
           {

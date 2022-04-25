@@ -14,7 +14,7 @@ import Profile from "./components/users/profile-screen";
 import OtherProfile from "./components/users/other-profiles";
 import EditProfile from "./components/users/edit-profile";
 
-import Privacy from "./components/privacy-screen";
+
 import Screen from "./components";
 
 //import UserList from "./components/users/user-list";
@@ -43,7 +43,7 @@ function App() {
                  <Route path="profile/:id" element={<OtherProfile/>}/>
                  <Route path="edit/:id" element={<EditProfile/>}/>
 
-                 <Route path="privacy" element={<Privacy/>}/>
+
                  <Route path="register" element={<Signup/>}/>
                  <Route path="login" element={<Login/>}/>
 

@@ -31,15 +31,15 @@ const ArticleSearch = () => {
 
   return (
     <div>
-      <h1>News Search</h1>
+      <h1  className="text-info">News Search</h1>
       <ul className="list-group">
         <li className="list-group-item">
           <button
             onClick={searchByTitle}
-            className="btn btn-primary float-end">Search</button>
+            className="btn btn-success float-end">Search</button>
           <input
             ref={titleSearchRef}
-            className="form-control w-75"/>
+            className="form-control w-75 "/>
         </li>
         {
           movies.map(movie =>

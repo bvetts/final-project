@@ -34,7 +34,16 @@ const CreateFavorite = ({profile, uuid, title}) => {
 
        })
 
-     await serviceF.createFavorite (fav);
+       try{
+       await serviceF.createFavorite (fav);
+      }catch(e){
+      var element = document.getElementById("fb");
+      element.style.display = "none";
+      alert('Already A Favorite')
+
+      }
+
+
 
   }
   //option to remove on details screen too? maybe messing with display/hide
@@ -58,10 +67,10 @@ const CreateFavorite = ({profile, uuid, title}) => {
   return (
     <div>
     <div>
-      <h1>Favorites</h1>
-      <button
+
+      <button id="fb"
           onClick={createFavorite}
-          className="btn btn-primary float-end"> Favorite Article</button>
+          className="btn btn-info  float"> Favorite Article</button>
         </div>
 
 

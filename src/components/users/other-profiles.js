@@ -5,7 +5,10 @@ import ProfileSearch from "./profile-search.js"
 import {Link, useNavigate} from "react-router-dom";
 
 import MyCommentList from "./user-comments.js"
+import FriendsListOther from "./friends-other.js"
 import FavoritesList from "../screens/favorites-info.js"
+
+import * as serviceOG from "../services/auth-service"
 
 const OtherProfile = () => {
 
@@ -21,45 +24,97 @@ const searchProfilesbyID = async () => {
     console.log(response);
   }
 
-
+const [orgprofile, setorgProfile] = useState({});
   useEffect(async () => {
+    const user = await serviceOG.profile();
+    setorgProfile(user);
     searchProfilesbyID();
 
   }, []);
 
 
 
+/*
+  useEffect(async () => {
+    searchProfilesbyID();
+
+  }, []);
+  */
+
+
+if(profile.role==="general"){
 return(
 
 
 
 <div>
-<div className="d-inline-flex wd-profileContainer">
+<div className="row mt-2">
+
+<div className="col-10 col-lg-8 ">
+
         <div className="wd-profileInfo ">
-         <h4>Profile For  {profile.firstName} {profile.lastName}</h4>
-         <p>{profile.username}</p>
+         <h4 className="text-info">Profile For  {profile.firstName} {profile.lastName}</h4>
+         <p className="text-white">Username: {profile.username}</p>
+         <p className="text-white">About: {profile.description}</p>
 
-         <h5>Role: {profile.role}</h5>
 
         </div>
 
+        <div className="">
+            <FavoritesList profile={profile}/>
+            <MyCommentList profile = {profile} />
 
-
-        <div className=" wd-profileButtons ">
-
-            <button className="mt-2 btn btn-primary btn-block rounded-pill" >Friend Them(not written)</button>
+        </div>
+    </div>
+    <div className=" d-lg-block col-lg-4 ">
+        <FriendsListOther profile = {orgprofile} otherID={profile._id} otherUsername={profile.username} />
         </div>
     </div>
 
-    <div className="">
-        <FavoritesList profile={profile}/>
-        <MyCommentList profile = {profile} />
-    </div>
+
+
+
 
 
 
 </div>
  );
+ }
+else{
+return(
+
+
+
+<div>
+<div className="row mt-2">
+
+<div className="col-10 col-lg-8 ">
+
+        <div className="wd-profileInfo ">
+         <h4 className="text-info">Profile For  {profile.firstName} {profile.lastName}</h4>
+         <p className="text-white">Username: {profile.username}</p>
+         <p className="text-white">Journalist For {profile.org}</p>
+
+
+        </div>
+
+        <div className="">
+            <FavoritesList profile={profile}/>
+            <MyCommentList profile = {profile} />
+
+
+        </div>
+    </div>
+    <div className=" d-lg-block col-lg-4 ">
+        <FriendsListOther profile = {orgprofile} otherID={profile._id} otherUsername={profile.username} />
+        </div>
+    </div>
+
+
+</div>
+ );
+
+}
 
 }
 
