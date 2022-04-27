@@ -4,6 +4,25 @@ width:65%;
 .wd-search-image{
 width:28%;
 }
+.wd-commentContainer{
+
+padding-left:30px;
+}
+.wd-commentContainer2{
+
+padding-left:40px;
+}
+.wd-commentContainer3{
+overflow:hidden;
+white-space: nowrap;
+
+}
+
+
+.wd-line{
+    color: rgb(110, 118, 125);
+    border-width: 1px;
+}
 
 .wd-privacyLock{
     width: 150px;
@@ -18,6 +37,14 @@ width:28%;
 .wd-profileInfo{
 width:75%;
 
+
+}
+.wd-specialList{
+list-style-type: none;
+
+}
+.wd-container{
+overflow:hidden;
 }
 .wd-profileButtons{
 width:25%;
@@ -27,7 +54,7 @@ width:25%;
 width:100%
 }
 .wd-boxOutline{
-padding:2px;
+padding:6px;
  border-color: white;
  border-width: 1px;
  border-style: solid;

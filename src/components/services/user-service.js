@@ -7,6 +7,13 @@ export const findAllUsers = async () => {
   const response = await axios.get(USERS_API)
   return response.data
 }
+
+
+export const findNewestUser = async () => {
+  const response = await axios.get({USERS_API})
+  return response.data
+}
+
 export const findUserById = async (id) => {
 console.log(`${USERS_API}/${id}`)
   const response = await axios.get(`${USERS_API}/${id}`)

@@ -21,8 +21,8 @@ console.log(profile._id)
   }
   const friendButton = async () => {
       findFriends();
-      var element = document.getElementById("fl");
-      element.style.display = "none";
+      //var element = document.getElementById("fl");
+      //element.style.display = "none";
 
     }
 
@@ -34,10 +34,14 @@ console.log(profile._id)
 
   return (
     <div>
-    <h5 className="text-success">My Friends:</h5>
-    <div>
-      <button id="fl" onClick={friendButton} className="btn btn-info float">Show Friends</button>
+
+    <div className="wd-container pb-2" id="val" >
+        <div>
+          <button id="fl" onClick={friendButton} className="btn btn-info btn-sm float-end">Refresh Friends</button>
+        </div>
+        <h5 className="text-success">My Friends:</h5>
     </div>
+
 
       <ul className="list-group">
 

@@ -72,12 +72,18 @@ if (profile._id){
   return (
     <div>
     <div className="pb-2">
-    <button id = "fb" onClick={createFriend} className="btn btn-info ">Add Friend</button>
+    <div className="wd-container pb-2" id="val" >
+        <button id = "fb" onClick={createFriend} className="btn btn btn-success float-end">Add Friend</button>
     </div>
-    <h5 className="text-success">Their Friends:</h5>
-    <div >
-      <button id="myDiv" onClick={friendButton} className="btn btn-info ">Show Friends</button>
     </div>
+
+    <div className="wd-container pb-2" id="val" >
+        <div >
+          <button id="myDiv" onClick={friendButton} className="btn btn-sm btn-info float-end ">Show Friends</button>
+        </div>
+        <h5 className="text-white">Their Friends:</h5>
+    </div>
+
       <ul className="list-group">
 
         {
@@ -106,10 +112,14 @@ return (
     <div className="pb-2">
 
     </div>
-    <h5 className="text-success">Their Friends:</h5>
-    <div >
-      <button id="myDiv" onClick={friendButton} className="btn btn-info ">Show Friends</button>
+    <div className="wd-container pb-2" id="val" >
+        <div >
+          <button id="myDiv" onClick={friendButton} className="btn btn-sm btn-info float-end ">Show Friends</button>
+        </div>
+        <h5 className="text-white">Their Friends:</h5>
     </div>
+
+
       <ul className="list-group">
 
         {

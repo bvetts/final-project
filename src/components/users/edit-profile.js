@@ -110,54 +110,62 @@ return(
 
 <div>
 
+
 <h1>Edit Profile</h1>
-<Link className="btn btn-primary btn-block rounded-pill" to="/profile">Back</Link>
-  <div className = 'pb-2'>
-  Username:
-  <input type="username" value={newUser.username} onChange={(e) =>
+<Link className="btn btn-info btn-block rounded-pill" to="/profile">Back</Link>
+  <div className = 'pb-2 pt-2'>
+  <div className="text-white">Username:</div>
+  <input className = "wd-commentBox" type="username" value={newUser.username} onChange={(e) =>
     setNewUser({...newUser,
       username: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  Password:
-  <input  type="password" value={newUser.password} onChange={(e) =>
+
+  <div className="text-white">Password:</div>
+  <input className = "wd-commentBox" type="password" value={newUser.password} onChange={(e) =>
     setNewUser({...newUser,
       password: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  Email:
-  <input type="email" value={newUser.email} onChange={(e) =>
+
+  <div className="text-white">Email:</div>
+  <input className = "wd-commentBox" type="email" value={newUser.email} onChange={(e) =>
     setNewUser({...newUser,
       email: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  First Name:
-  <input type="firstName" value={newUser.firstName} onChange={(e) =>
+
+  <div className="text-white">First Name:</div>
+  <input  className = "wd-commentBox" type="firstName" value={newUser.firstName} onChange={(e) =>
       setNewUser({...newUser,
         firstName: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-  Last Name:
-  <input type="lastName" value={newUser.lastName} onChange={(e) =>
+
+  <div className="text-white">Last Name:</div>
+  <input className = "wd-commentBox" type="lastName" value={newUser.lastName} onChange={(e) =>
       setNewUser({...newUser,
         lastName: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-      Phone:
-      <input  type="phone" value={newUser.phone} onChange={(e) =>
+
+      <div className="text-white">Phone:</div>
+      <input  className = "wd-commentBox" type="phone" value={newUser.phone} onChange={(e) =>
           setNewUser({...newUser,
             phone: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
-        Journalist Organization:
-        <input  type="org" value={newUser.org} onChange={(e) =>
+
+        <div className="text-white">Journalist Organization:</div>
+
+        <input className = "wd-commentBox"  type="org" value={newUser.org} onChange={(e) =>
             setNewUser({...newUser,
               org: e.target.value})}/>
+
     </div>
 
 
-  <button className="btn btn-primary btn-block rounded-pill " onClick={confirmEdit}>Confirm Changes</button>
-
+  <button className="btn btn-success btn-block rounded-pill " onClick={confirmEdit}>Confirm Changes</button>
 
 
 

@@ -21,9 +21,9 @@ const navigate = useNavigate();
 
     return(
         <>
-            <div className="list-group">
+            <div className="list-group ">
 
-                <NavLink  to="/home" className="list-group-item " >
+                <NavLink  to="/home" className="list-group-item "  >
                         <i className="fa fa-home"> <span className="wd-navLabels" > Home</span> </i> </NavLink>
                 <NavLink to="/search" className="list-group-item" >
                         <i className="fa fa-hashtag"> <span className="wd-navLabels" > Search</span> </i> </NavLink>
@@ -31,6 +31,8 @@ const navigate = useNavigate();
                 <NavLink to="/profile"  className="list-group-item">
                          <i className="fa fa-user"><span className="wd-navLabels" > Profile</span>  </i> </NavLink>
 
+                <NavLink to="/comments"  className="list-group-item">
+                         <i className="fa fa-list"><span className="wd-navLabels" > Comments</span>  </i> </NavLink>
 
 
             </div>

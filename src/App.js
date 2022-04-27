@@ -21,7 +21,7 @@ import Screen from "./components";
 
 import ArticleSearch from "./components/screens/search-screen";
 import ArticleDetails from "./components/screens/details-screen";
-
+import AllComments from "./components/screens/all-comments";
 
 
 
@@ -46,6 +46,7 @@ function App() {
 
                  <Route path="register" element={<Signup/>}/>
                  <Route path="login" element={<Login/>}/>
+                 <Route path="comments" element={<AllComments/>}/>
 
 
 

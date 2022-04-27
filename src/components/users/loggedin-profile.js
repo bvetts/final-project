@@ -27,7 +27,7 @@ const navigate = useNavigate()
 
 
 
-if (profile){
+if (profile.role==="general"){
 
 return(
 
@@ -61,8 +61,11 @@ return(
 
     <br/>
     <div className="">
+        <hr/>
         <FavoritesList profile={profile}/>
+
         <MyCommentList profile = {profile} />
+        <hr/>
         <FriendsListL profile = {profile} />
     </div>
     <br/>
@@ -71,12 +74,60 @@ return(
  );
 
 }
+if (profile.role==="journalist"){
+
+return(
+
+<div>
+    <div className="d-inline-flex wd-profileContainer">
+        <div className="wd-profileInfo ">
+         <h2 className="text-info">Welcome {profile.firstName} {profile.lastName}</h2>
+
+         <div className="wd-boxOutline">
+             <h5 className="text-white">Username: {profile.username}</h5>
+
+
+             <h5>Email: {profile.email}</h5>
+             <h5>Phone: {profile.phone}</h5>
+         </div>
+         <br/>
+
+
+
+
+        </div>
+
+
+
+        <div className=" wd-profileButtons ">
+            <Link to={`/edit/${profile._id}`} className="btn btn-info float-end " >Edit Profile</Link>
+
+            <button className="mt-2 btn btn-info float-end" onClick={logout}>Logout</button>
+        </div>
+    </div>
+
+    <br/>
+    <div className="">
+
+        <FavoritesList profile={profile}/>
+        <hr/>
+        <MyCommentList profile = {profile} />
+        <hr/>
+        <FriendsListL profile = {profile} />
+    </div>
+    <br/>
+    <br/>
+</div>
+ );
+
+}
+
 else{
 
 return(
 
 <>
-<h3>Login to See Your Profile</h3>
+<h3 className="text-success">Login to See Your Profile</h3>
   <Link className="btn btn-lg btn-info" to="/login">Login</Link>
 
 </>);

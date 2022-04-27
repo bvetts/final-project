@@ -17,7 +17,7 @@ const ArticleSearch = () => {
 
   //var searchString = 'apple'
   const searchByTitle = async () => {
-    const searchString = titleSearchRef.current.value || movieSearch || 'apple'
+    const searchString = titleSearchRef.current.value
     const response = await axios.get(`${searchUrl}${searchString}`)
     setMovies(response.data.data)
     titleSearchRef.current.value = searchString
@@ -26,7 +26,7 @@ const ArticleSearch = () => {
 
   }
   useEffect(() => {
-    searchByTitle()
+    //searchByTitle()
   }, [])
 
   return (

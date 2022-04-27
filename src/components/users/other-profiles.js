@@ -93,7 +93,7 @@ return(
         <div className="wd-profileInfo ">
          <h4 className="text-info">Profile For  {profile.firstName} {profile.lastName}</h4>
          <p className="text-white">Username: {profile.username}</p>
-         <p className="text-white">Journalist For {profile.org}</p>
+         <p className="text-white">Journalist For: {profile.org}</p>
 
 
         </div>

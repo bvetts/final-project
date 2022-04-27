@@ -29,8 +29,8 @@ console.log(title)
 
   const commButton = async () => {
           findComments();
-          var element = document.getElementById("fc");
-          element.style.display = "none";
+          //var element = document.getElementById("fc");
+          //element.style.display = "none";
 
 
    }
@@ -81,9 +81,9 @@ if (profile.role=="journalist"){
 
     </div>
     <div className = 'pt-5'>
-    <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={commButton}>Find Comments</button>
+    <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={commButton}>Refresh Comments</button>
 
-
+        <div className="pt-2">
       <ul className="list-group">
 
         {
@@ -93,7 +93,7 @@ if (profile.role=="journalist"){
               By: <Link to={`/profile/${commlist.userID}`}>{commlist.name}</Link>
               <br/>
 
-              <div className = " wd-titles d-inline-block">{commlist.comment}</div>
+              <div className = "text-success d-inline-block">{commlist.comment}</div>
 
 
 
@@ -101,6 +101,7 @@ if (profile.role=="journalist"){
           )
         }
       </ul>
+      </div>
       </div>
 
     </div>
@@ -110,15 +111,15 @@ else{
 
 return (
     <div>
-    <div >
+    <div className="pb-2">
       <h5>Comments</h5>
       <p>Comments by Journalists </p>
 
 
- <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={commButton}>Find Comments</button>
+    <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={commButton}>Refresh Comments</button>
 
     </div>
-
+    <div className="pt-2">
       <ul className="list-group">
 
         {
@@ -128,7 +129,7 @@ return (
               By: <Link to={`/profile/${commlist.userID}`}>{commlist.name}</Link>
               <br/>
 
-              <div className = " wd-titles d-inline-block">{commlist.comment}</div>
+              <div className = " text-success d-inline-block">{commlist.comment}</div>
 
 
 
@@ -136,7 +137,7 @@ return (
           )
         }
       </ul>
-
+    </div>
     </div>
   );
 

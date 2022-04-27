@@ -25,8 +25,8 @@ console.log(profile._id)
   }
   const favButton = async () => {
       findFavorites();
-      var element = document.getElementById("div");
-      element.style.display = "none";
+      //var element = document.getElementById("div");
+      //element.style.display = "none";
 
     }
 
@@ -38,11 +38,14 @@ console.log(profile._id)
 if(profile.role==="general"){
   return (
     <div>
-    <h5 className="text-success">Favorite Articles:</h5>
 
+    <div className="wd-container pb-2" id="val" >
     <div>
-      <button id="div" onClick={favButton} className="btn btn-info float">Show Favorite Articles</button>
+      <button id="div" onClick={favButton} className="btn btn-info  btn-sm float-end">Show Favorites</button>
     </div>
+    <h5 className="text-success">Favorite Articles:</h5>
+    </div>
+
       <ul className="list-group">
 
         {

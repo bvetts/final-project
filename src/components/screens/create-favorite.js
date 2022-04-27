@@ -63,7 +63,7 @@ const CreateFavorite = ({profile, uuid, title}) => {
 //need to lookup and display title and image isntead of id??
 //this might be why we need article in our database
 //need the button, aldo have it display hide the button itself??
-
+if (profile.role==="general"){
   return (
     <div>
     <div>
@@ -77,7 +77,18 @@ const CreateFavorite = ({profile, uuid, title}) => {
     </div>
   );
 
+}
+else{
+return (
+    <div>
 
+
+
+
+    </div>
+  );
+
+}
 
 };
 

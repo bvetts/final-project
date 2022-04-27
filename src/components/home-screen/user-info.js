@@ -5,6 +5,8 @@ import {useParams} from "react-router-dom";
 import {Link, useNavigate} from "react-router-dom";
 
 import FavoritesList from "../screens/favorites-info.js"
+import MyCommentList from "../users/user-comments.js"
+
 
 const HomeComponent = () => {
 
@@ -15,7 +17,7 @@ const [profile, setProfile] = useState({});
 
   }, []);
 
-if (profile){
+if (profile.role=="general"){
     return(
 
         <div >
@@ -30,14 +32,29 @@ if (profile){
         </div>
   );
 }
+if (profile.role=="journalist"){
+    return(
+
+        <div >
+
+
+            <h4 className="text-success"> Hello {profile.firstName} {profile.lastName}</h4>
+            <p className="text-white">Username: {profile.username}</p>
+
+
+            <MyCommentList profile = {profile} />
+
+        </div>
+  );
+}
 else{
 
 return(
 
         <div>
 
-
-            <Link className="btn btn-primary btn-block rounded-pill" to="/login">Login </Link>
+            <h5 className="text-info">Anonymous User</h5>
+            <Link className="btn btn-success" to="/login">Login </Link>
 
         </div>
   );

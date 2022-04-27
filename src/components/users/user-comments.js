@@ -28,10 +28,10 @@ console.log(profile._id)
 
   const commButton = async () => {
         findComments();
-        var element = document.getElementById("myDivC");
-        element.style.display = "none";
-        var element2 = document.getElementById("showComments");
-        element2.style.display = "show";
+        //var element = document.getElementById("myDivC");
+        //element.style.display = "none";
+        //var element2 = document.getElementById("showComments");
+        //element2.style.display = "show";
 
       }
 
@@ -47,11 +47,14 @@ console.log(profile._id)
 if (profile.role ==="journalist"){
   return (
     <div>
-    <h5 className="text-success">Comments:</h5>
 
-        <div id="myDivC">
-          <button onClick={commButton} className="btn btn-info float">Show Comments</button>
+    <div className="wd-container pb-2" id="val" >
+        <div >
+          <button onClick={commButton} className="btn btn-info btn-sm float-end">Refresh Comments</button>
         </div>
+        <h5 className="text-success">Comments:</h5>
+    </div>
+
     <div id="showComments" >
 
       <ul className="list-group">
@@ -60,11 +63,13 @@ if (profile.role ==="journalist"){
           commlist.map(commlist =>
           <li key={commlist._id} className="list-group-item">
               <i onClick={() => deleteC(commlist._id)} className="fa-solid fa-remove fa-2x fa-pull-left"></i>
-
-              <Link to={`/details/${commlist.uuid}`}>{commlist.title}</Link>
-
-              <div className = "wd-titles d-inline-block">{commlist.comment}</div>
-
+              <div className="wd-commentContainer">
+                  <div className="text-info d-inline ">Article: </div>
+                  <Link className="d-inline " to={`/details/${commlist.uuid}`}>{commlist.title}</Link>
+              </div>
+              <div className="wd-commentContainer">
+                <div className = " d-inline-block text-success">{commlist.comment}</div>
+              </div>
 
 
           </li>
