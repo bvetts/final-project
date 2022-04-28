@@ -22,8 +22,9 @@ import Screen from "./components";
 import ArticleSearch from "./components/screens/search-screen";
 import ArticleDetails from "./components/screens/details-screen";
 import AllComments from "./components/screens/all-comments";
-
-
+import ArticleList from "./components/screens/articles-view";
+import ArticleDetail from "./components/screens/article-details.js";
+import Orgs from "./components/screens/org-screen";
 
 function App() {
  return (
@@ -47,8 +48,10 @@ function App() {
                  <Route path="register" element={<Signup/>}/>
                  <Route path="login" element={<Login/>}/>
                  <Route path="comments" element={<AllComments/>}/>
+                 <Route path="article" element={<ArticleList/>}/>
+                 <Route path="article/:topic" element={<ArticleDetail/>}/>
 
-
+                 <Route path="partners" element={<Orgs/>}/>
 
 
 

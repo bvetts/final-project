@@ -32,7 +32,11 @@ const navigate = useNavigate();
                          <i className="fa fa-user"><span className="wd-navLabels" > Profile</span>  </i> </NavLink>
 
                 <NavLink to="/comments"  className="list-group-item">
-                         <i className="fa fa-list"><span className="wd-navLabels" > Comments</span>  </i> </NavLink>
+                         <i className="fa fa-list"><span className="wd-navLabels" >  Comments</span>  </i> </NavLink>
+                <NavLink to="/article"  className="list-group-item">
+                         <i className="fa fa-bookmark"><span className="wd-navLabels" >  Articles</span>  </i> </NavLink>
+                <NavLink to="/partners"  className="list-group-item">
+                         <i className="fa fa-circle"><span className="wd-navLabels" >  Partners</span>  </i> </NavLink>
 
 
             </div>
