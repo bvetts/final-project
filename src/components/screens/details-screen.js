@@ -7,6 +7,7 @@ import LDetails from "./loggedin-details.js"
 import CreateFavorite from "./create-favorite.js"
 //allow a logged in user to favorite article here
 //allow a logged in journalist to post comments here
+import {Link, useNavigate} from "react-router-dom";
 
 const ArticleDetails = () => {
   const [profile, setProfile] = useState({});
@@ -50,7 +51,7 @@ const ArticleDetails = () => {
 
       <div className="col-10 col-lg-8 ">
 
-
+        <Link to={`/search`} className="btn btn-info float-end " >Back to Search</Link>
       <h3 className="text-success">{movieDetails.title}</h3>
       <div className="wd-articleImageBox ">
         <img className = "" src={movieDetails.image_url} height={180} />
