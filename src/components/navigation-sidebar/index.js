@@ -26,7 +26,7 @@ const navigate = useNavigate();
                 <NavLink  to="/home" className="list-group-item "  >
                         <i className="fa fa-home"> <span className="wd-navLabels" > Home</span> </i> </NavLink>
                 <NavLink to="/search" className="list-group-item" >
-                        <i className="fa fa-hashtag"> <span className="wd-navLabels" > Search</span> </i> </NavLink>
+                        <i className="fa fa-hashtag"> <span className="wd-navLabels" > News Search</span> </i> </NavLink>
 
                 <NavLink to="/profile"  className="list-group-item">
                          <i className="fa fa-user"><span className="wd-navLabels" > Profile</span>  </i> </NavLink>
@@ -34,7 +34,7 @@ const navigate = useNavigate();
                 <NavLink to="/comments"  className="list-group-item">
                          <i className="fa fa-list"><span className="wd-navLabels" >  Comments</span>  </i> </NavLink>
                 <NavLink to="/article"  className="list-group-item">
-                         <i className="fa fa-bookmark"><span className="wd-navLabels" >  Articles</span>  </i> </NavLink>
+                         <i className="fa fa-bookmark"><span className="wd-navLabels" >  Our Articles</span>  </i> </NavLink>
                 <NavLink to="/partners"  className="list-group-item">
                          <i className="fa fa-circle"><span className="wd-navLabels" >  Partners</span>  </i> </NavLink>
 

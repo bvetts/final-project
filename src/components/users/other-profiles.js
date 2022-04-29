@@ -9,6 +9,8 @@ import FriendsListOther from "./friends-other.js"
 import FavoritesList from "../screens/favorites-info.js"
 
 import * as serviceOG from "../services/auth-service"
+import MyArticleList from "./my-articles.js"
+
 
 const OtherProfile = () => {
 
@@ -62,7 +64,7 @@ return(
 
         <div className="">
             <FavoritesList profile={profile}/>
-            <MyCommentList profile = {profile} />
+
 
         </div>
     </div>
@@ -93,14 +95,16 @@ return(
         <div className="wd-profileInfo ">
          <h4 className="text-info">Profile For  {profile.firstName} {profile.lastName}</h4>
          <p className="text-white">Username: {profile.username}</p>
-         <p className="text-white">Journalist For: {profile.org}</p>
+         <p className="text-white">Journalist For: <Link className="ml-2"to={`/partners`}> {profile.org}</Link></p>
 
 
         </div>
 
         <div className="">
-            <FavoritesList profile={profile}/>
+
             <MyCommentList profile = {profile} />
+            <hr/>
+            <MyArticleList profile = {profile}/>
 
 
         </div>

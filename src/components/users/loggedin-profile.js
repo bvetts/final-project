@@ -6,6 +6,8 @@ import {Link, useNavigate} from "react-router-dom";
 import FavoritesList from "../screens/favorites-info.js"
 import MyCommentList from "./user-comments.js"
 import FriendsListL from "./friends-list-logged.js"
+import MyArticleList from "./my-articles.js"
+
 
 const LoggedProfile = () => {
 
@@ -67,6 +69,7 @@ return(
         <MyCommentList profile = {profile} />
         <hr/>
         <FriendsListL profile = {profile} />
+
     </div>
     <br/>
     <br/>
@@ -89,6 +92,7 @@ return(
 
              <h5>Email: {profile.email}</h5>
              <h5>Phone: {profile.phone}</h5>
+             <h5 className="text-white">Journalist For: <Link className="ml-2"to={`/partners`}> {profile.org}</Link></h5>
          </div>
          <br/>
 
@@ -114,6 +118,8 @@ return(
         <MyCommentList profile = {profile} />
         <hr/>
         <FriendsListL profile = {profile} />
+        <hr/>
+           <MyArticleList profile = {profile}/>
     </div>
     <br/>
     <br/>
