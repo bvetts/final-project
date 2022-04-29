@@ -37,7 +37,7 @@ if (profile.username){
 else{
 return (
     <div>
-      <h4 className="text-info">Log in to see comments or to favorite this article</h4>
+      <h4 className="text-info">Log In to See Comments or Favorite This Article</h4>
 
       <Link className="btn btn-success" to="/login">Login</Link>
 

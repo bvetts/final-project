@@ -46,7 +46,7 @@ return(
 
 <div>
 
-    <h5>Topic: {topic}</h5>
+    <h3  className="text-white">Topic: {topic}</h3>
 
 
 
@@ -58,11 +58,12 @@ return(
 
 
 
-                      <div className="text-info">{artlist.title}</div>
-                      By: <Link to={`/profile/${artlist.userID}`}>{artlist.author}</Link><br/>
-                      <div className="text-success">{artlist.content}</div>
-                      <div className="text-success">{artlist.org}</div>
-
+                      <h5 className="text-info">{artlist.title}</h5>
+                      <div className="wd-commentContainer">
+                          By: <Link to={`/profile/${artlist.userID}`}>{artlist.author}</Link><br/>
+                          <div className="text-success">{artlist.content}</div>
+                          <div className="text-success">{artlist.org}</div>
+                      </div>
 
 
 

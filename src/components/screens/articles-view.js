@@ -63,21 +63,21 @@ if (profile.role=="journalist"){
   return (
     <div>
     <div >
-      <h2>Write an Article</h2>
+      <h2 className="text-success">Write an Article</h2>
 
       <div className = 'pb-2'>
-      <div className="text-white">Title</div>
+      <div className="text-white">Title:</div>
                  <input className = "wd-commentBox" type="title" placeholder="Article Title" onChange={(e) =>
                            setNewComment({...newComment,
                              title: e.target.value})}/>
-            <div className="text-white">Article</div>
-           <textarea className="wd-commentBox" placeholder="Write an Article" onChange={(e) =>
+            <div className="text-white pt-1">Article:</div>
+           <textarea className="wd-commentBox pb-5" placeholder="Write an Article" onChange={(e) =>
                 setNewComment({...newComment,
                   content: e.target.value})}></textarea>
-          <div className="text-white">Topic Tag</div>
-                     <textarea className="wd-commentBox" placeholder="Topic" onChange={(e) =>
+          <div className="text-white">Topic Tag:</div>
+                     <input  className="wd-commentBox" placeholder="Topic" onChange={(e) =>
                           setNewComment({...newComment,
-                            topic: e.target.value})}></textarea>
+                            topic: e.target.value})}></input >
 
 
           <button className="btn btn-info btn-block btn-sm float-end " onClick={writeComment}>Post Article</button>
@@ -88,7 +88,7 @@ if (profile.role=="journalist"){
 
     </div>
     <div className = 'pt-5'>
-    <h2>Articles by Our Journalists</h2>
+    <h2 >Articles by Our Journalists</h2>
     <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={artButton}>Refresh Articles</button>
 
         <div className="pt-2">
@@ -126,7 +126,7 @@ return (
     <div>
 
         <div className = ''>
-        <h3>Articles by Our Journalists</h3>
+        <h3  >Articles by Our Journalists</h3>
         <button id="fc" className="btn btn-info btn-block btn-sm  " onClick={artButton}>Refresh Articles</button>
 
             <div className="pt-2">

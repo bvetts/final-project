@@ -29,9 +29,9 @@ export const Login = () => {
     </div>
     <div>
         <div className="text-white">Username:</div>
-            <input className = "wd-commentBox" onChange={(e) =>setLoginUser({...loginUser,username: e.target.value})}/>
+            <input className = "wd-commentBox" placeholder="Username" onChange={(e) =>setLoginUser({...loginUser,username: e.target.value})}/>
         <div className="text-white">Password:</div>
-            <input className = "wd-commentBox" type="password" onChange={(e) =>setLoginUser({...loginUser,password: e.target.value})}/>
+            <input className = "wd-commentBox" placeholder="Password" type="password" onChange={(e) =>setLoginUser({...loginUser,password: e.target.value})}/>
         <div className = "pt-2">
             <Link className="btn btn-success float-end" to="/register">New User</Link>
             <button className="btn btn-success " onClick={login}>Login</button>

@@ -15,7 +15,7 @@ const Signup = () => {
 
 const logout = async () => {
     await service.logout()
-    navigate('/register')
+    navigate('/home')
   }
 
 //navigate on signup isnt woking right, but user is being made?
@@ -43,10 +43,9 @@ const logout = async () => {
 
 if (profile){
 return (
-<>
-<button className="btn btn-danger"
-            onClick={logout}>Logout</button>
-</>
+<div>
+<button className="btn btn-info" onClick={logout}>Logout</button>
+</div>
 );
 
 
@@ -60,42 +59,42 @@ else{
 
   <div className = 'pb-2'>
   <div className="text-white">Username:</div>
-  <input className = "wd-commentBox" type="username" onChange={(e) =>
+  <input className = "wd-commentBox" type="username" placeholder="Username" onChange={(e) =>
     setNewUser({...newUser,
       username: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
 
   <div className="text-white">Password:</div>
-  <input className = "wd-commentBox" type="password" onChange={(e) =>
+  <input className = "wd-commentBox" type="password" placeholder="Password" onChange={(e) =>
     setNewUser({...newUser,
       password: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
 
   <div className="text-white">Email:</div>
-  <input className = "wd-commentBox"  type="email" onChange={(e) =>
+  <input className = "wd-commentBox"  type="email" placeholder="Email" onChange={(e) =>
     setNewUser({...newUser,
       email: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
 
   <div className="text-white">First Name:</div>
-  <input className = "wd-commentBox" type="firstName" onChange={(e) =>
+  <input className = "wd-commentBox" type="firstName" placeholder="First" onChange={(e) =>
       setNewUser({...newUser,
         firstName: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
 
   <div className="text-white">Last Name:</div>
-  <input className = "wd-commentBox" type="lastName" onChange={(e) =>
+  <input className = "wd-commentBox" type="lastName" placeholder="Last" onChange={(e) =>
       setNewUser({...newUser,
         lastName: e.target.value})}/>
   </div>
   <div className = 'pb-2'>
 
-      <div className="text-white">Phone:</div>
-      <input className = "wd-commentBox" type="phone" onChange={(e) =>
+      <div className="text-white">Phone Number:</div>
+      <input className = "wd-commentBox" type="phone" placeholder="Phone" onChange={(e) =>
           setNewUser({...newUser,
             phone: e.target.value})}/>
   </div>
